@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="stylesheets/pure-min.css">
     <link rel="stylesheet" href="stylesheets/fonts.css">
     <link rel="stylesheet" href="stylesheets/book_viewer.css">
+    <script>
+      (function(name,path,ctx){var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+      })('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.4.2.min.js',this);
+
+      KeenAsync.ready(function(){
+        const client = new KeenAsync({
+          projectId: '5bc7cd9fc9e77c0001ccb797',
+          writeKey: '51B19FB82B5F080AB08DD20ED5C14FF2E64CCCE9740F7E40D1515DCFAA4D3359BF828D00CBF165E4C21ED5446086CCEA8359A8BB808529B22B7635976AFD5203555E23732EDE7A7B9A809E7B19FA3B36E30A5166BFBD548931762AC0CBE41280'
+        });
+
+        // Record an event
+        client.recordEvent('pageviews', {
+          title: document.title
+        });
+      });
+</script>
 </head>
 
 <body>
